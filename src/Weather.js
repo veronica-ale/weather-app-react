@@ -127,7 +127,8 @@ export default function Weather() {
           target="_blank"
           rel="noreferrer"
         >
-          Open-source code
+          {" "}
+          Open-source code{" "}
         </a>
         by Veronica Alessandrini
       </div>
