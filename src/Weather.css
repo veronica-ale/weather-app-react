@@ -1,0 +1,46 @@
+.Weather .today-temp img {
+  height: 90px;
+  width: 90px;
+}
+
+.Weather .today-temp strong {
+  color: #3f51b5;
+  font-size: 50px;
+  line-height: 2;
+  margin-left: 30px;
+}
+
+.Weather .today-temp .units {
+  position: relative;
+  font-size: 16px;
+  top: -30px;
+}
+
+.Weather .today-temp .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.Weather .today-temp .active:hover {
+  text-decoration: none;
+}
+
+.Weather .weather-forecast h2 {
+  text-align: center;
+  font-style: italic;
+  font-weight: lighter;
+}
+.Weather .weather-forecast img {
+  display: block;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
+}
+
+.weather-forecast-temperature {
+  text-align: center;
+  color: #607d8b;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 10px;
+}

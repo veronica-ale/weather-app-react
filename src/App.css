@@ -1,38 +1,68 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .container {
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 40px 60px;
+  font-family: "Ubuntu", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App h1,
+h2 {
+  color: #3f51b5;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App h1 {
+  font-size: 35px;
 }
 
-.App-link {
-  color: #61dafb;
+.App h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.App li {
+  list-style: none;
+  color: #607d8b;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.App li:first-letter {
+  text-transform: capitalize;
+}
+
+.App p {
+  text-align: center;
+  font-size: 15px;
+  color: #607d8b;
+}
+
+.App hr {
+  color: #607d8b;
+}
+
+.App button {
+  margin-top: 20px;
+}
+
+.App .footer {
+  text-align: center;
+  margin-top: 10px;
+  color: #607d8b;
+  font-size: 13px;
 }
