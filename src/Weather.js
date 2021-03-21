@@ -122,7 +122,11 @@ export default function Weather() {
       </div>
       <div className="footer">
         <i className="fab fa-github"></i>
-        <a href="/" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/veronica-ale/weather-app-react"
+          target="_blank"
+          rel="noreferrer"
+        >
           Open-source code
         </a>
         by Veronica Alessandrini
