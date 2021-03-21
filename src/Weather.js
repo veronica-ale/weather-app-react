@@ -4,7 +4,7 @@ import "./Weather.css";
 export default function Weather() {
   let weatherData = {
     city: "Lisbon",
-    date: "Monday 19:42",
+    date: "Monday 19:35",
     description: "Clear Sky",
     imgUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
     humidity: 82,
