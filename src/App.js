@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container border rounded border-primary">
-        <Weather />
+        <Weather defaultCity="Lisbon" />
       </div>
       <footer className="footer">
         <i className="fab fa-github"></i>
