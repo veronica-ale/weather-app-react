@@ -14,123 +14,109 @@ export default function Weather() {
 
   return (
     <div className="Weather">
-      <div className="container border rounded shadow">
+      <form>
         <div className="row">
-          <div className="col-sm-6">
-            <h1>{weatherData.city}</h1>
-            <ul>
-              <li>
-                Last updated: {weatherData.date}
-                <span></span>
-              </li>
-              <li>{weatherData.description}</li>
-            </ul>
+          <div className="col-9">
+            <input
+              type="search"
+              className="form-control"
+              placeholder="Search for your city"
+              autoFocus="on"
+            />
           </div>
-          <div className="col-sm-6">
-            <form className="mb-3">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search for your city"
-              />
-              <button type="submit" className="btn btn-primary btn-sm">
-                Search🔎
-              </button>
-              <button type="button" className="btn btn-outline-primary btn-sm">
-                Current location 📍
-              </button>
-            </form>
+          <div className="col-3">
+            <input
+              type="submit"
+              value="Search🔎"
+              className="btn btn-primary w-100"
+            />
           </div>
         </div>
-        <div className="row">
-          <div className="col-sm-6">
-            <div className="clearfix today-temp">
-              <img
-                src={weatherData.imgUrl}
-                alt={weatherData.description}
-                className="float-left"
-              />
-              <strong>{weatherData.temperature}</strong>
-              <span className="units">
-                <a href="/" className="active">
-                  °C
-                </a>{" "}
-                |<a href="/">°F</a>
-              </span>
-            </div>
-          </div>
-          <div className="col-sm-6">
-            <ul>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind} KM/h</li>
-            </ul>
+      </form>
+      <h1>{weatherData.city}</h1>
+      <ul>
+        <li>
+          Last updated: {weatherData.date}
+          <span></span>
+        </li>
+        <li>{weatherData.description}</li>
+      </ul>
+      <div className="row">
+        <div className="col-sm-6">
+          <div className="clearfix today-temp">
+            <img
+              src={weatherData.imgUrl}
+              alt={weatherData.description}
+              className="float-left"
+            />
+            <strong>{weatherData.temperature}</strong>
+            <span className="units">
+              <a href="/" className="active">
+                °C
+              </a>{" "}
+              |<a href="/">°F</a>
+            </span>
           </div>
         </div>
-        <hr />
-        <div className="row weather-forecast">
-          <div className="col-sm">
-            <h2>Tue</h2>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-              alt=""
-            />
-            <div className="weather-forecast-temperature">
-              <strong>18°</strong> |8°
-            </div>
-          </div>
-          <div className="col-sm">
-            <h2>Wed</h2>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-              alt=""
-            />
-            <div className="weather-forecast-temperature">
-              <strong>21°</strong> |9°
-            </div>
-          </div>
-          <div className="col-sm">
-            <h2>Thu</h2>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-              alt=""
-            />
-            <div className="weather-forecast-temperature">
-              <strong>18°</strong> |10°
-            </div>
-          </div>
-          <div className="col-sm">
-            <h2>Fri</h2>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-              alt=""
-            />
-            <div className="weather-forecast-temperature">
-              <strong>17°</strong> |8°
-            </div>
-          </div>
-          <div className="col-sm">
-            <h2>Sat</h2>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-              alt=""
-            />
-            <div className="weather-forecast-temperature">
-              <strong>21°</strong> |10°
-            </div>
-          </div>
+        <div className="col-sm-6">
+          <ul>
+            <li>Humidity: {weatherData.humidity}%</li>
+            <li>Wind: {weatherData.wind} KM/h</li>
+          </ul>
         </div>
       </div>
-      <div className="footer">
-        <i className="fab fa-github"></i>
-        <a
-          href="https://github.com/veronica-ale/weather-app-react"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {" "}
-          Open-source code{" "}
-        </a>
-        by Veronica Alessandrini
+      <hr />
+      <div className="row weather-forecast">
+        <div className="col-sm">
+          <h2>Tue</h2>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+            alt=""
+          />
+          <div className="weather-forecast-temperature">
+            <strong>18°</strong> |8°
+          </div>
+        </div>
+        <div className="col-sm">
+          <h2>Wed</h2>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+            alt=""
+          />
+          <div className="weather-forecast-temperature">
+            <strong>21°</strong> |9°
+          </div>
+        </div>
+        <div className="col-sm">
+          <h2>Thu</h2>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+            alt=""
+          />
+          <div className="weather-forecast-temperature">
+            <strong>18°</strong> |10°
+          </div>
+        </div>
+        <div className="col-sm">
+          <h2>Fri</h2>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+            alt=""
+          />
+          <div className="weather-forecast-temperature">
+            <strong>17°</strong> |8°
+          </div>
+        </div>
+        <div className="col-sm">
+          <h2>Sat</h2>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
+            alt=""
+          />
+          <div className="weather-forecast-temperature">
+            <strong>21°</strong> |10°
+          </div>
+        </div>
       </div>
     </div>
   );
