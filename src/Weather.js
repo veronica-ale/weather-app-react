@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
@@ -19,10 +20,25 @@ export default function Weather(props) {
     });
   }
 
+  function search() {
+    const apiKey = "9a16a097a91abca0bb210b3d484b70fe";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
@@ -30,6 +46,7 @@ export default function Weather(props) {
                 className="form-control"
                 placeholder="Search for your city"
                 autoFocus="on"
+                onChange={handleCityChange}
               />
             </div>
             <div className="col-3">
@@ -41,97 +58,11 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <h1>{weatherData.city}</h1>
-        <ul>
-          <li>
-            Last updated: <FormattedDate date={weatherData.date} />
-          </li>
-          <li className="text-capitalize">{weatherData.description}</li>
-        </ul>
-        <div className="row">
-          <div className="col-sm-6">
-            <div className="clearfix today-temp">
-              <img
-                src={weatherData.imgUrl}
-                alt={weatherData.description}
-                className="float-left"
-              />
-              <strong>{Math.round(weatherData.temperature)}</strong>
-              <span className="units">
-                <a href="/" className="active">
-                  °C
-                </a>{" "}
-                |<a href="/">°F</a>
-              </span>
-            </div>
-          </div>
-          <div className="col-sm-6">
-            <ul>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind} KM/h</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-        <div className="row weather-forecast">
-          <div className="col-sm">
-            <h2>Tue</h2>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-              alt=""
-            />
-            <div className="weather-forecast-temperature">
-              <strong>18°</strong> |8°
-            </div>
-          </div>
-          <div className="col-sm">
-            <h2>Wed</h2>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-              alt=""
-            />
-            <div className="weather-forecast-temperature">
-              <strong>21°</strong> |9°
-            </div>
-          </div>
-          <div className="col-sm">
-            <h2>Thu</h2>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-              alt=""
-            />
-            <div className="weather-forecast-temperature">
-              <strong>18°</strong> |10°
-            </div>
-          </div>
-          <div className="col-sm">
-            <h2>Fri</h2>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-              alt=""
-            />
-            <div className="weather-forecast-temperature">
-              <strong>17°</strong> |8°
-            </div>
-          </div>
-          <div className="col-sm">
-            <h2>Sat</h2>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-              alt=""
-            />
-            <div className="weather-forecast-temperature">
-              <strong>21°</strong> |10°
-            </div>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
-    const apiKey = "9a16a097a91abca0bb210b3d484b70fe";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return "Loading...";
   }
 }
