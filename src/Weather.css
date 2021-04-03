@@ -55,20 +55,12 @@ h2 {
   top: -30px;
 }
 
-.Weather .today-temp .active {
-  color: rgb(33, 33, 33);
-  cursor: default;
-}
-
-.Weather .today-temp .active:hover {
-  text-decoration: none;
-}
-
 .Weather .weather-forecast h2 {
   text-align: center;
   font-style: italic;
   font-weight: bold;
 }
+
 .Weather .weather-forecast img {
   display: block;
   margin: 0 auto;
