@@ -1,6 +1,6 @@
 .Weather h1 {
   color: #0069d9;
-  font-size: 40px;
+  font-size: 38px;
   text-align: left;
   margin: 20px 0;
   font-weight: bold;
@@ -24,12 +24,8 @@
   text-transform: capitalize;
 }
 
-.Weather hr {
-  color: #607d8b;
-}
-
 .Weather canvas {
-  margin: 20px auto;
+  margin: 23px auto;
 }
 
 .Weather .today-temp strong {
@@ -42,5 +38,5 @@
 .Weather .today-temp .units {
   position: relative;
   font-size: 16px;
-  top: -30px;
+  top: -27px;
 }

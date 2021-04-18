@@ -9,16 +9,30 @@ export default function App() {
         <Weather defaultCity="Lisbon" />
       </div>
       <footer className="footer">
-        <i className="fab fa-github"></i>
+        This project was coded by{" "}
+        <a
+          href="https://www.linkedin.com/in/veronicaalessandrini/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Veronica Alessandrini
+        </a>
+        , is{" "}
         <a
           href="https://github.com/veronica-ale/weather-app-react"
           target="_blank"
           rel="noreferrer"
         >
-          {" "}
-          Open-source code{" "}
+          Open-sourced{" "}
         </a>
-        by Veronica Alessandrini
+        on <i className="fab fa-github"></i> and{" "}
+        <a
+          href="https://eager-meninsky-6a560d.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          hosted on Netlify
+        </a>
       </footer>
     </div>
   );
